@@ -12,6 +12,11 @@ export class AppComponent {
   getName(){
     return `Hello ${this.name}`
   }
+  currentValue=""
+  getValue(val: string){
+    console.log(val)
+    this.currentValue = val;
+  }
   obj={
     name: 'Kelly',
     age: 20

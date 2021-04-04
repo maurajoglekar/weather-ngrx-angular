@@ -1,15 +1,29 @@
 
+<h1>Get text box values in Angular</h1>
+<!--(keyup)="getValue(event.target.value)" did not work -->
+<input type="text" #box7 (keyup)="getValue(box7.value)"/>
+<h2>{{currentValue}}</h2>
+
+<input type="text" #box8 />
+<button (click)="getValue(box8.value)">Get above value</button>
+<h2>{{currentValue}}</h2>
+<br>
+
+
 <h1>Important Events in Angular</h1>
 <button (click)="myEvent('this is click event')">click me</button>
 <br>
+<label>on key up: </label>
+<input type="text" #box (keyup)="myEvent(box.value)"/>
 <br>
-<label>on key up: </label><input type="text" #box (keyup)="myEvent(box.value)"/>
+<label>on key down: </label>
+<input type="text" #box2 (keydown)="myEvent(box2.value)"/>
 <br>
-<label>on key down: </label><input type="text" #box2 (keydown)="myEvent(box2.value)"/>
+<label>on key up space: </label><
+  input type="text" #box3 (keyup.space)="myEvent(box3.value)"/>
 <br>
-<label>on key up space: </label><input type="text" #box3 (keyup.space)="myEvent(box3.value)"/>
-<br>
-<label>on blur: </label><input type="text" #box4 (blur)="myEvent(box4.value)"/>
+<label>on blur: </label>
+<input type="text" #box4 (blur)="myEvent(box4.value)"/>
 <h1 (mouseover)="myEvent('just went over title')" style="background-color: skyblue">mouse over </h1>
 <h1 (mouseleave)="myEvent('just left title')" style="background-color: red">mouse over </h1>
 
@@ -21,12 +35,16 @@
 <h2>Accessing Array prints all entries separted by commas: {{arr}}</h2>
 <h2>Cannot use window directly, must put value in JS var: {{siteUrl}}</h2>
 <br>
+
+
 <h1>New components</h1>
 <h2>at app level</h2>
 <app-user-list></app-user-list>
 <h2>at users level, subcomponent of app </h2>
 <app-login></app-login>
 <br>
+
+
 <h1>Functions and Click Event</h1>
 <button (click)="getNameWithButton(myName)">Get My name in property</button>
 <br>
