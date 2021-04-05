@@ -1,7 +1,43 @@
+<h1>13 - Switch case in Angular</h1>
 
-<h1>Get text box values in Angular</h1>
+<div [ngSwitch]="color">
+  <h2 style="color: red;" *ngSwitchCase="'red'">red color</h2>
+  <h2 style="color: green;" *ngSwitchCase="'green'">green color</h2>
+  <h2 style="color: gray;" *ngSwitchDefault>default color</h2>
+</div>
+<h1>12 - Conditions in Angular</h1>
+<!--
+  <h1 *ngIf="show == 'yes'; then ifBlock else elseBlock"> if block</h1>
+<ng-template #ifBlock>
+  <h1>if block</h1>
+</ng-template>
+<br>
+<ng-template #elseBlock>
+  <h1>else block</h1>
+</ng-template>
+-->
+<ng-template [ngIf]="show == 'green'">
+  <h1>green block</h1>
+</ng-template>
+<ng-template [ngIf]="show == 'blue'">
+  <h1>blue block</h1>
+</ng-template>
+<br>
+
+<h1>11 - property binding and interpolation in Angular</h1>
+<br>
+<!-- Binding-->
+<input type="text" [disabled]=disabledBox [value]="name">
+<br>
+<!-- interpolation -->
+<input type="text" disabled={{disabledBox}} value={{name}}>
+<br>
+<button (click)="enableBox()">Enable textbox</button>
+<br>
+<br>
+<h1>10 - Get text box values in Angular</h1>
 <!--(keyup)="getValue(event.target.value)" did not work -->
-<input type="text" #box7 (keyup)="getValue(box7.value)"/>
+<input type="text" #box7 (keyup)="getValue(box7.value)" />
 <h2>{{currentValue}}</h2>
 
 <input type="text" #box8 />
@@ -10,25 +46,25 @@
 <br>
 
 
-<h1>Important Events in Angular</h1>
+<h1>9 - Important Events in Angular</h1>
 <button (click)="myEvent('this is click event')">click me</button>
 <br>
 <label>on key up: </label>
-<input type="text" #box (keyup)="myEvent(box.value)"/>
+<input type="text" #box (keyup)="myEvent(box.value)" />
 <br>
 <label>on key down: </label>
-<input type="text" #box2 (keydown)="myEvent(box2.value)"/>
+<input type="text" #box2 (keydown)="myEvent(box2.value)" />
 <br>
-<label>on key up space: </label><
-  input type="text" #box3 (keyup.space)="myEvent(box3.value)"/>
+<label>on key up space: </label>
+<input type="text" #box3 (keyup.space)="myEvent(box3.value)" />
 <br>
 <label>on blur: </label>
-<input type="text" #box4 (blur)="myEvent(box4.value)"/>
+<input type="text" #box4 (blur)="myEvent(box4.value)" />
 <h1 (mouseover)="myEvent('just went over title')" style="background-color: skyblue">mouse over </h1>
 <h1 (mouseleave)="myEvent('just left title')" style="background-color: red">mouse over </h1>
 
 
-<h1>Angular Interpolation</h1>
+<h1> 5 - Angular Interpolation</h1>
 <h1>{{name}}</h1>
 <h2>{{getName()}}</h2>
 <h2>{{obj.age}}</h2>
@@ -37,14 +73,15 @@
 <br>
 
 
-<h1>New components</h1>
+<h1>6 - New components</h1>
 <h2>at app level</h2>
 <app-user-list></app-user-list>
-<h2>at users level, subcomponent of app </h2>
+
+<h2>7 - at users level, subcomponent of app </h2>
 <app-login></app-login>
 <br>
 
 
-<h1>Functions and Click Event</h1>
+<h1>4 - Functions and Click Event</h1>
 <button (click)="getNameWithButton(myName)">Get My name in property</button>
 <br>

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'tutorial';
   appName = 'youtube app'
-  name = "Maura"
+  name = "Bruce"
   getName(){
     return `Hello ${this.name}`
   }
@@ -30,4 +30,10 @@ export class AppComponent {
   myEvent(evt: string){
     console.log(evt);
   }
+  disabledBox = true;
+  enableBox(){
+     this.disabledBox = false;
+  }
+  show="green"
+  color="sky blue"
 }
