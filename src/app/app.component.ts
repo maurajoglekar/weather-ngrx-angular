@@ -36,4 +36,24 @@ export class AppComponent {
   }
   show="green"
   color="sky blue"
+  employees=[
+    {
+      name: 'Kelly',
+      age: 20,
+      email: 'test@gmail.com'
+    },
+    {
+      name: 'John',
+      age: 26,
+      email: 'test@gmail.com'
+    },
+    {
+      name: 'Mary',
+      age: 19,
+      email: 'test@gmail.com'
+    }
+  ]
+  getValues(val: object) {
+    console.log(val)
+  }
 }

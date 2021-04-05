@@ -1,3 +1,32 @@
+<h1>15 - Simple Form in Angular</h1>
+<form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm.value)">
+  <input type="text" ngModel name="name" placeholder="enter the user name">
+  <br>  <br>
+  <input type="text" ngModel name="age" placeholder="enter the age">
+  <br>  <br>
+  <input type="text" ngModel name="email" placeholder="enter the email">
+  <br>  <br>
+  <input type="password" ngModel name="password" placeholder="enter the password">
+  <br>  <br>
+  <button>Get user values</button>
+</form>
+<h1>14 - For Loop in Angular</h1>
+<!--
+  <h4 *ngFor="let item of employees">{{item.name}}{{item.age}}</h4>
+-->
+<table border="1">
+  <tr>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Email</td>
+  </tr>
+  <tr *ngFor="let item of employees">
+    <td>{{item.name}}</td>
+    <td>{{item.age}}</td>
+    <td>{{item.email}}</td>
+  </tr>
+</table>
+
 <h1>13 - Switch case in Angular</h1>
 
 <div [ngSwitch]="color">
