@@ -35,7 +35,7 @@ export class AppComponent {
      this.disabledBox = false;
   }
   show="green"
-  color="sky blue"
+  color="blue"
   employees=[
     {
       name: 'Kelly',
@@ -56,4 +56,9 @@ export class AppComponent {
   getValues(val: object) {
     console.log(val)
   }
+  err=true
+  updateColor(){
+    this.err = !this.err;
+  }
+
 }

@@ -1,3 +1,13 @@
+
+<app-header></app-header>
+
+<h1>17 - Style Binding in Angular</h1>
+<h1 style="color: red">Heading h1 with just style property</h1>
+<h1 [style.color]="color">Heading h1 with dynamic binding</h1>
+<h1 [style.color]="err? 'red' : 'green'">Toggle Heading h1 with dynamic binding</h1>
+<button (click)="updateColor()">toggle color</button>
+
+
 <h1>15 - Simple Form in Angular</h1>
 <form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm.value)">
   <input type="text" ngModel name="name" placeholder="enter the user name">
@@ -114,3 +124,5 @@
 <h1>4 - Functions and Click Event</h1>
 <button (click)="getNameWithButton(myName)">Get My name in property</button>
 <br>
+
+<app-footer></app-footer>
