@@ -1,6 +1,31 @@
-
 <app-header></app-header>
 
+<h2>20- Pass Data Parent to Child Component in Angular</h2>
+<!--
+<app-user-list [hero]="data"></app-user-list>
+-->
+<app-user-list [employees]="employees"></app-user-list>
+<br>
+
+<h2>19 - Add Material in Angular</h2>
+<!--  https://material.angular.io/components/button/overview -->
+<br>
+<h3>Flat Buttons</h3>
+<div class="example-button-row">
+  <button mat-flat-button>Basic</button>
+  <button mat-flat-button color="primary">Primary</button>
+  <button mat-flat-button color="accent">Accent</button>
+  <button mat-flat-button color="warn">Warn</button>
+  <button mat-flat-button disabled>Disabled</button>
+  <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+</div>
+<br>
+<h3>Sliders</h3>
+<mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
+<mat-slider vertical></mat-slider>
+<mat-slider thumbLabel tickInterval="1"></mat-slider>
+
+<br>
 <h2>18 - Add bootstrap in Angular</h2>
 <p *ngFor="let alert of alerts">
   <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
@@ -15,21 +40,21 @@
 <h3 [style.color]="color">Heading h3 with dynamic binding</h3>
 <h3 [style.color]="err? 'red' : 'green'">Toggle Heading h3 with dynamic binding</h3>
 <button (click)="updateColor()">toggle color</button>
-<br>  <br>
+<br> <br>
 
 <h2>15 - Simple Form in Angular</h2>
 <form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm.value)">
   <input type="text" ngModel name="name" placeholder="enter the user name">
-  <br>  <br>
+  <br> <br>
   <input type="text" ngModel name="age" placeholder="enter the age">
-  <br>  <br>
+  <br> <br>
   <input type="text" ngModel name="email" placeholder="enter the email">
-  <br>  <br>
+  <br> <br>
   <input type="password" ngModel name="password" placeholder="enter the password">
-  <br>  <br>
+  <br> <br>
   <button>Get user values</button>
 </form>
-<br>  <br>
+<br> <br>
 <h2>14 - For Loop in Angular</h2>
 <!--
   <h4 *ngFor="let item of employees">{{item.name}}{{item.age}}</h4>
@@ -46,7 +71,7 @@
     <td>{{item.email}}</td>
   </tr>
 </table>
-<br>  <br>
+<br> <br>
 
 <h2>13 - Switch case in Angular</h2>
 
@@ -55,7 +80,7 @@
   <h3 style="color: green;" *ngSwitchCase="'green'">green color</h3>
   <h3 style="color: gray;" *ngSwitchDefault>default color</h3>
 </div>
-<br>  <br>
+<br> <br>
 
 <h2>12 - Conditions in Angular</h2>
 <!--
@@ -115,7 +140,7 @@
 <h3 (mouseover)="myEvent('just went over title')" style="background-color: skyblue">mouse over </h3>
 <h3 (mouseleave)="myEvent('just left title')" style="background-color: red">mouse over </h3>
 
-<br>  <br>
+<br> <br>
 <h2> 5 - Angular Interpolation</h2>
 <h4>{{name}}</h4>
 <h4>{{getName()}}</h4>

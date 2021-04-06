@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+interface Employee {
+  name: string;
+  age: number;
+  email: string
+}
 
 @Component({
   selector: 'app-user-list',
@@ -7,9 +13,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
+  @Input() employees:Employee[]= []
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.employees);
   }
 
 }

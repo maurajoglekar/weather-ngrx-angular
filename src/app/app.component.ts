@@ -5,6 +5,8 @@ interface Alert {
   message: string;
 }
 
+
+
 const ALERTS: Alert[] = [{
     type: 'success',
     message: 'This is an success alert',
@@ -107,7 +109,6 @@ export class AppComponent {
   updateColor(){
     this.err = !this.err;
   }
-
-
+  data="bruce"
 
 }
