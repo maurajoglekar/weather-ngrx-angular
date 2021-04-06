@@ -1,14 +1,23 @@
 
 <app-header></app-header>
 
-<h1>17 - Style Binding in Angular</h1>
-<h1 style="color: red">Heading h1 with just style property</h1>
-<h1 [style.color]="color">Heading h1 with dynamic binding</h1>
-<h1 [style.color]="err? 'red' : 'green'">Toggle Heading h1 with dynamic binding</h1>
+<h2>18 - Add bootstrap in Angular</h2>
+<p *ngFor="let alert of alerts">
+  <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+</p>
+<p>
+  <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+</p>
+
+<br>
+<h2>17 - Style Binding in Angular</h2>
+<h3 style="color: red">Heading h3 with just style property</h3>
+<h3 [style.color]="color">Heading h3 with dynamic binding</h3>
+<h3 [style.color]="err? 'red' : 'green'">Toggle Heading h3 with dynamic binding</h3>
 <button (click)="updateColor()">toggle color</button>
+<br>  <br>
 
-
-<h1>15 - Simple Form in Angular</h1>
+<h2>15 - Simple Form in Angular</h2>
 <form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm.value)">
   <input type="text" ngModel name="name" placeholder="enter the user name">
   <br>  <br>
@@ -20,7 +29,8 @@
   <br>  <br>
   <button>Get user values</button>
 </form>
-<h1>14 - For Loop in Angular</h1>
+<br>  <br>
+<h2>14 - For Loop in Angular</h2>
 <!--
   <h4 *ngFor="let item of employees">{{item.name}}{{item.age}}</h4>
 -->
@@ -36,34 +46,37 @@
     <td>{{item.email}}</td>
   </tr>
 </table>
+<br>  <br>
 
-<h1>13 - Switch case in Angular</h1>
+<h2>13 - Switch case in Angular</h2>
 
 <div [ngSwitch]="color">
-  <h2 style="color: red;" *ngSwitchCase="'red'">red color</h2>
-  <h2 style="color: green;" *ngSwitchCase="'green'">green color</h2>
-  <h2 style="color: gray;" *ngSwitchDefault>default color</h2>
+  <h3 style="color: red;" *ngSwitchCase="'red'">red color</h3>
+  <h3 style="color: green;" *ngSwitchCase="'green'">green color</h3>
+  <h3 style="color: gray;" *ngSwitchDefault>default color</h3>
 </div>
-<h1>12 - Conditions in Angular</h1>
+<br>  <br>
+
+<h2>12 - Conditions in Angular</h2>
 <!--
-  <h1 *ngIf="show == 'yes'; then ifBlock else elseBlock"> if block</h1>
+  <h2 *ngIf="show == 'yes'; then ifBlock else elseBlock"> if block</h2>
 <ng-template #ifBlock>
-  <h1>if block</h1>
+  <h2>if block</h2>
 </ng-template>
 <br>
 <ng-template #elseBlock>
-  <h1>else block</h1>
+  <h2>else block</h2>
 </ng-template>
 -->
 <ng-template [ngIf]="show == 'green'">
-  <h1>green block</h1>
+  <h4>green block</h4>
 </ng-template>
 <ng-template [ngIf]="show == 'blue'">
-  <h1>blue block</h1>
+  <h4>blue block</h4>
 </ng-template>
-<br>
+<br><br>
 
-<h1>11 - property binding and interpolation in Angular</h1>
+<h2>11 - property binding and interpolation in Angular</h2>
 <br>
 <!-- Binding-->
 <input type="text" [disabled]=disabledBox [value]="name">
@@ -74,7 +87,7 @@
 <button (click)="enableBox()">Enable textbox</button>
 <br>
 <br>
-<h1>10 - Get text box values in Angular</h1>
+<h2>10 - Get text box values in Angular</h2>
 <!--(keyup)="getValue(event.target.value)" did not work -->
 <input type="text" #box7 (keyup)="getValue(box7.value)" />
 <h2>{{currentValue}}</h2>
@@ -85,7 +98,7 @@
 <br>
 
 
-<h1>9 - Important Events in Angular</h1>
+<h2>9 - Important Events in Angular</h2>
 <button (click)="myEvent('this is click event')">click me</button>
 <br>
 <label>on key up: </label>
@@ -99,21 +112,21 @@
 <br>
 <label>on blur: </label>
 <input type="text" #box4 (blur)="myEvent(box4.value)" />
-<h1 (mouseover)="myEvent('just went over title')" style="background-color: skyblue">mouse over </h1>
-<h1 (mouseleave)="myEvent('just left title')" style="background-color: red">mouse over </h1>
+<h3 (mouseover)="myEvent('just went over title')" style="background-color: skyblue">mouse over </h3>
+<h3 (mouseleave)="myEvent('just left title')" style="background-color: red">mouse over </h3>
 
-
-<h1> 5 - Angular Interpolation</h1>
-<h1>{{name}}</h1>
-<h2>{{getName()}}</h2>
-<h2>{{obj.age}}</h2>
-<h2>Accessing Array prints all entries separted by commas: {{arr}}</h2>
-<h2>Cannot use window directly, must put value in JS var: {{siteUrl}}</h2>
+<br>  <br>
+<h2> 5 - Angular Interpolation</h2>
+<h4>{{name}}</h4>
+<h4>{{getName()}}</h4>
+<h4>{{obj.age}}</h4>
+<h4>Accessing Array prints all entries separted by commas: {{arr}}</h4>
+<h4>Cannot use window directly, must put value in JS var: {{siteUrl}}</h4>
 <br>
 
 
-<h1>6 - New components</h1>
-<h2>at app level</h2>
+<h2>6 - New components</h2>
+<h4>at app level</h4>
 <app-user-list></app-user-list>
 
 <h2>7 - at users level, subcomponent of app </h2>
@@ -121,7 +134,7 @@
 <br>
 
 
-<h1>4 - Functions and Click Event</h1>
+<h2>4 - Functions and Click Event</h2>
 <button (click)="getNameWithButton(myName)">Get My name in property</button>
 <br>
 
