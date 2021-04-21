@@ -1,5 +1,12 @@
 <app-header></app-header>
 
+<h2>21- Reusable Component in Angular</h2>
+<div *ngFor="let employee of employees">
+  <app-user [user]=employee></app-user>
+</div>
+
+<br>
+
 <h2>20- Pass Data Parent to Child Component in Angular</h2>
 <!--
 <app-user-list [hero]="data"></app-user-list>
