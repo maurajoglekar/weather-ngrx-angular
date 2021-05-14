@@ -1,39 +1,34 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UsersModule } from './users/users.module'
-import { from } from 'rxjs';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatButtonModule } from '@angular/material/button'
-import { MatSliderModule } from '@angular/material/slider';
-import { UserComponent } from './user/user.component'
+
+import { AppComponent } from './app.component';
+import { ZipcodeEntryComponent } from './zipcode-entry/zipcode-entry.component';
+import {LocationService} from "./location.service";
+import { ForecastsListComponent } from './forecasts-list/forecasts-list.component';
+import {WeatherService} from "./weather.service";
+import { CurrentConditionsComponent } from './current-conditions/current-conditions.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import {RouterModule} from "@angular/router";
+import {routing} from "./app.routing";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
-    HeaderComponent,
-    FooterComponent,
-    UserComponent
+    ZipcodeEntryComponent,
+    ForecastsListComponent,
+    CurrentConditionsComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    UsersModule,
     FormsModule,
-    NgbModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatSliderModule
+    HttpClientModule,
+    RouterModule,
+    routing
   ],
-  providers: [],
+  providers: [LocationService, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
