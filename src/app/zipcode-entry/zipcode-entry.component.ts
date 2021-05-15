@@ -7,7 +7,7 @@ import {LocationService} from "../location.service";
 })
 export class ZipcodeEntryComponent {
 
-  constructor(private service : LocationService) { }
+  constructor(public service : LocationService) { }
 
   addLocation(zipcode : string){
     this.service.addLocation(zipcode);
