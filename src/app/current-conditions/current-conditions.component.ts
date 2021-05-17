@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import {WeatherService} from "../weather.service";
-import {LocationService} from "../location.service";
+import {WeatherService} from '../weather.service';
+
 import {Router} from "@angular/router";
+import {State} from '../reducers';
+import {Store} from '@ngrx/store';
+
 
 @Component({
   selector: 'app-current-conditions',
@@ -10,14 +13,16 @@ import {Router} from "@angular/router";
 })
 export class CurrentConditionsComponent {
 
-  constructor(public weatherService : WeatherService, public locationService : LocationService, private router : Router) {
-  }
+    zipcodes: Array<String> = [];
 
-  getCurrentConditions() {
-    return this.weatherService.getCurrentConditions();
-  }
+    constructor(private weatherService : WeatherService,
+                private router : Router,
+                private store: Store<State>) {
+        store.select(state => state.zipcodes)    //gets the zipcodes from the state which gives an observable
+            .subscribe(zips => this.zipcodes = zips.zipcodes);
+    }
 
-  showForecast(zipcode : string){
-    this.router.navigate(['/forecast', zipcode])
-  }
+    showForecast(zipcode : string) {
+        this.router.navigate(['/forecast', zipcode]);
+    }
 }
