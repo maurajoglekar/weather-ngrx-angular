@@ -16,13 +16,17 @@ export class CurrentConditionsComponent {
 
     zipcodes: Array<string> = [];
 
-    currentConditions!: Map<string, any>;
+    currentConditions: Map<string, any> = new Map();;
     
     constructor(public weatherService : WeatherService,
                 private router : Router,
                 private store: Store<State>) {
         store.select(state => state.zipcodes)    //gets the zipcodes from the state which gives an observable
             .subscribe(zips => this.zipcodes = zips.zipcodes);
+
+        store.select(state => state.currentConditions)
+            .subscribe(conditions => this.currentConditions = conditions.currentConditions);
+
     }
 
     showForecast(zipcode : string) {
